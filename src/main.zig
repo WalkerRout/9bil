@@ -15,7 +15,7 @@ pub fn Machine(comptime T: type, comptime N: usize) type {
         pub fn init(alphabet: []const T) Self {
             return .{
                 .alphabet = alphabet,
-                .last_name = .{undefined} ** N,
+                .last_name = undefined,
                 .index = 0,
                 // cache limit
                 .limit = std.math.pow(usize, alphabet.len, N),
